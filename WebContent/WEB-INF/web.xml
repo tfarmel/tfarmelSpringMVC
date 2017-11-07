@@ -17,7 +17,7 @@
 
 	<servlet-mapping>
 		<servlet-name>tfarmelapp</servlet-name>
-		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.htm</url-pattern>
 	</servlet-mapping>
 
 	<!-- CONFIG Chargeur de contexte (ContextLoader) -->

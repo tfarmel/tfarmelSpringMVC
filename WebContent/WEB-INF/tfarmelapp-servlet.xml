@@ -14,7 +14,7 @@
 		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
 	</bean>
 
-	<bean name="/home.html"
+	<bean name="/home.htm"
 		class="com.tfarmel.tfarmelspringmvc.controller.HomePageController">
 		<property name="employeManager" ref="employeManager" />
 	</bean>
