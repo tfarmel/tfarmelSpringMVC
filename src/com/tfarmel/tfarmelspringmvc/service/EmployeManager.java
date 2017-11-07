@@ -45,4 +45,10 @@ public class EmployeManager implements IEmployeManager {
 		
 	}
 
+	
+	public Employe getEmployeById(int id) {
+		Employe employe = employeDao.getEmployeById(id);
+		return employe;
+	}
+
 }

@@ -11,5 +11,6 @@ public interface IEmployeManager {
 	public void deleteEmployes();
 	public void updateEmployes();
 	public void createEmployes();
+	public Employe getEmployeById(int id);
 
 }

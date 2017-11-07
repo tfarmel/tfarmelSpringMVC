@@ -1,23 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+	 	http://www.springframework.org/schema/context
+	 	http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
-	<!-- Controleur type d'urlMapping : org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping -->
+	<!-- Tenir compte de configuration par annotations (@Autowired, @Required, 
+		@Qualifier...) -->
+	<context:annotation-config />
 
-	<bean id="homePageController"
-		class="com.tfarmel.tfarmelspringmvc.controller.HomePageController">
-		<property name="employeManager" ref="employeManager"></property>
-	</bean>
+	<!-- Location des composants de type @Component, @Controller, @Service, 
+		@Repository... -->
+	<context:component-scan base-package="com.tfarmel.tfarmelspringmvc"></context:component-scan>
 
-	<bean id="urlMapping"
-		class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
-	</bean>
-
-	<bean name="/home.htm"
-		class="com.tfarmel.tfarmelspringmvc.controller.HomePageController">
-		<property name="employeManager" ref="employeManager" />
-	</bean>
+	<!-- Handler Mapping pour annotations -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"></bean>
 
 	<!-- View Resolver : Toutes les vues sont des JSP -->
 

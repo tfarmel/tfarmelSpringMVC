@@ -1,6 +1,8 @@
 package com.tfarmel.tfarmelspringmvc.domain;
 
+
 public class Employe {
+	
 
 	private int id;
 	private String login;
